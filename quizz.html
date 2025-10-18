@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quel château te correspond ?</title>
+  <link rel="stylesheet" href="Styles.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8f4ef;
+      color: #3b2a1a;
+      margin: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #87CEFA;
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .logo { height: 70px; }
+
+    .header-title {
+      font-size: 1.6em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .quizz {
+      max-width: 750px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px;
+      margin: 60px auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #87CEFA;
+      font-size: 2em;
+      margin-bottom: 25px;
+    }
+
+    .question p {
+      font-size: 1.3em;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .quiz-image {
+      width: 100%;
+      max-width: 500px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease;
+    }
+
+    .quiz-image:hover {
+      transform: scale(1.03);
+    }
+
+    label {
+      display: block;
+      margin: 12px auto;
+      font-size: 1.05em;
+      color: #4b3a27;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    label:hover {
+      color: #a8834e;
+    }
+
+    input[type="radio"] {
+      accent-color: #87CEFA;
+      margin-right: 10px;
+    }
+
+    #nextBtn {
+      background-color: #87CEFA;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 12px;
+      margin-top: 25px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    #nextBtn:hover {
+      background-color: #6eb7e0;
+      transform: scale(1.05);
+    }
+
+    .resultat {
+      margin-top: 40px;
+      font-size: 1.2em;
+      color: #4b3a27;
+      font-weight: 600;
+    }
+
+    .resultat-image {
+      width: 350px;
+      border-radius: 12px;
+      margin-top: 25px;
+      animation: fadeIn 1.5s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Tours du château (animation finale) */
+    #tours-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .tour {
+      position: absolute;
+      bottom: 0;
+      width: 90px;
+      height: 0;
+      background-image: url('tour.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+    }
+
+    .tour.gauche { left: 10%; }
+    .tour.droite { right: 10%; }
+
+    @keyframes growTour {
+      from { height: 0; opacity: 0; transform: scaleY(0); }
+      to { height: 450px; opacity: 1; transform: scaleY(1); }
+    }
+
+    .grow {
+      animation: growTour 2s forwards ease-out;
+    }
+
+    footer {
+      background-color: #87CEFA;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 60px;
+    }
+    .question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="site.html">
+          <img src="chateau_doré-removebg-preview.png" alt="Logo" class="logo">
+        </a>
+      </div>
+      <div class="header-title">Quel château te correspond ?</div>
+      <nav class="nav-links">
+        <ul>
+          <li><a href="site.html#accueil" style="color:white;">Accueil</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="quizz">
+    <h1></h1>
+
+    <div id="quiz-container"></div>
+    <button id="nextBtn">CONTINUER</button>
+
+    <div id="tours-container">
+      <div class="tour gauche"></div>
+      <div class="tour droite"></div>
+    </div>
+
+    <div id="resultat" class="resultat"></div>
+  </section>
+
+  <footer>
+    <h2>Mon site 2025</h2>
+  </footer>
+
+  <script>
+    // On ne supprime pas le flag ici
+  
+    const quizData = [
+      { question: "1️⃣ Que pensez-vous du pont-levis ?", image: "pontlevis.jpg", name: "q1", options: [
+        { text: "Indispensable sur un château", value: "moyenage" },
+        { text: "Sympathique à voir", value: "renaissance" },
+        { text: "Absolument pas nécessaire", value: "moderne" }
+      ]},
+      { question: "2️⃣ Comment aimez-vous les fenêtres ?", image: "fenetres.webp", name: "q2", options: [
+        { text: "Grandes et nombreuses", value: "moderne" },
+        { text: "Petites mais nombreuses", value: "renaissance" },
+        { text: "Peu et petites", value: "moyenage" }
+      ]},
+      { question: "3️⃣ Quelle époque préférez-vous ?", image: "epoque 2.jpg", name: "q3", options: [
+        { text: "Moyen Âge", value: "moyenage" },
+        { text: "Renaissance", value: "renaissance" },
+        { text: "Époque moderne", value: "moderne" }
+      ]},
+      { question: "4️⃣ Où aimez-vous que soit situé un château ?", image: "environement.jpg", name: "q4", options: [
+        { text: "En hauteur", value: "moyenage" },
+        { text: "En forêt", value: "renaissance" },
+        { text: "Peu importe", value: "moderne" }
+      ]},
+      { question: "5️⃣ Que pensez-vous des tours ?", image: "tours.jpg", name: "q5", options: [
+        { text: "Plus il y en a, mieux c'est !", value: "moyenage" },
+        { text: "C'est joli", value: "renaissance" },
+        { text: "Ce n'est pas indispensable", value: "moderne" }
+      ]},
+      { question: "6️⃣ Concernant le jardin, que préférez-vous ?", image: "jardins.jpg", name: "q6", options: [
+        { text: "Un grand jardin à la française", value: "renaissance" },
+        { text: "Un petit jardin naturel", value: "moyenage" },
+        { text: "Vous n'avez pas d'avis", value: "moderne" }
+      ]},
+      { question: "7️⃣ En termes de décoration intérieure, que préférez-vous ?", image: "décoration.jpg", name: "q7", options: [
+        { text: "De la tapisserie et des tableaux", value: "moyenage" },
+        { text: "Sobre et pierre apparente", value: "renaissance" },
+        { text: "Mélange ancien et moderne", value: "moderne" }
+      ]},
+      { question: "8️⃣ Selon vous, quel est le plus important pour un château ?", image: "qualité.jpg", name: "q8", options: [
+        { text: "Sa situation géographique", value: "moyenage" },
+        { text: "Sa beauté", value: "renaissance" },
+        { text: "Sa grandeur", value: "moderne" }
+      ]}
+    ];
+
+    let currentQuestion = 0;
+    const quizContainer = document.getElementById("quiz-container");
+    const nextBtn = document.getElementById("nextBtn");
+    const tours = document.querySelectorAll(".tour");
+    const userAnswers = {};
+
+    function showQuestion() {
+      const q = quizData[currentQuestion];
+      quizContainer.innerHTML = `
+        <div class="question">
+          <p>${q.question}</p>
+          <img src="${q.image}" alt="Image question ${currentQuestion + 1}" class="quiz-image">
+          ${q.options.map(opt => `
+            <label><input type="radio" name="${q.name}" value="${opt.value}"> ${opt.text}</label>
+          `).join('')}
+        </div>
+      `;
+      nextBtn.innerText = currentQuestion === quizData.length - 1 ? "Voir le résultat" : "Continuer";
+    }
+
+    nextBtn.addEventListener("click", () => {
+      const selected = document.querySelector(`input[name="${quizData[currentQuestion].name}"]:checked`);
+      if (!selected) {
+        alert("⚠️ Merci de choisir une réponse avant de continuer !");
+        return;
+      }
+
+      userAnswers[quizData[currentQuestion].name] = selected.value;
+      currentQuestion++;
+
+      if (currentQuestion < quizData.length) {
+        showQuestion();
+      } else {
+        afficherResultat();
+      }
+    });
+
+    function afficherResultat() {
+      nextBtn.style.display = "none";
+      let score = { moyenage: 0, renaissance: 0, moderne: 0 };
+      Object.values(userAnswers).forEach(v => score[v]++);
+
+      let resultatTexte = "";
+      let imageResultat = "";
+
+      if (score.moyenage > score.renaissance && score.moyenage > score.moderne) {
+        resultatTexte = "🏰 Tu corresponds au Château de Carcassonne ! Un esprit médiéval, fort et authentique.";
+        imageResultat = "carcasonne.jpg";
+      } else if (score.renaissance > score.moyenage && score.renaissance > score.moderne) {
+        resultatTexte = "🌹 Tu corresponds au Château de Chenonceau ! Élégance, art et raffinement sont tes maîtres mots.";
+        imageResultat = "chenonceau.jpg";
+      } else {
+        resultatTexte = "✨ Tu corresponds au Château de Versailles ! Tu aimes le faste, la beauté et la grandeur.";
+        imageResultat = "versailles.jpg";
+      }
+
+      tours.forEach(t => t.classList.add("grow"));
+      quizContainer.innerHTML = `
+        <h3>Résultat :</h3>
+        <p>${resultatTexte}</p>
+        <img src="${imageResultat}" alt="Château correspondant" class="resultat-image">
+      `;
+    }
+
+// On affiche un bouton "Faire le quizz" au lieu de lancer automatiquement
+quizContainer.innerHTML = `
+  <button id="startQuizBtn" style="
+    background-color: #87CEFA;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  ">🎯 Faire le quizz</button>
+`;
+
+nextBtn.style.display = "none"; // On cache le bouton "Continuer" tant que le quizz n'a pas commencé
+
+document.getElementById("startQuizBtn").addEventListener("click", () => {
+  document.getElementById("startQuizBtn").style.display = "none";
+  nextBtn.style.display = "inline-block";
+  showQuestion();
+});
+
+
+  </script>
+</body>
+</html>

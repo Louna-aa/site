@@ -1,0 +1,489 @@
+/* ===== RÉINITIALISATION ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ===== ENTÊTE ===== */
+.header {
+    background-color: #87CEFA; /* bleu clair */
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 25px 0; /* plus grande entête */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* LOGO À GAUCHE */
+.logo {
+    height: 70px; /* logo plus grand */
+}
+
+/* TITRE AU CENTRE */
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Georgia', serif; /* écriture élégante */
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+/* MENU À DROITE */
+.nav-links ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links ul li {
+    margin-left: 30px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: #FFD700;
+}
+
+/* ===== IMAGE DE BIENVENUE ===== */
+.bienvenue {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-bienvenue {
+    width: 100%;
+    height: 65vh;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.texte-bienvenue {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.texte-bienvenue h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.texte-bienvenue h1:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ===== INTRODUCTION ===== */
+.introduction {
+    max-width: 900px;
+    margin: 40px auto;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+/* ===== SEPARATEUR ===== */
+.separator {
+    width: 80%;
+    height: 2px;
+    background-color: #eee;
+    margin: 50px auto;
+}
+
+/* ===== SECTION CHÂTEAUX ===== */
+.chateaux {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chateaux h2 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.chateau {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* ✅ centre l'image verticalement avec le texte */
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+
+.chateau img {
+    width: 300px;
+    margin-right: 40px; /* laisse de la marge */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.chateau-texte {
+    max-width: 800px;
+}
+
+.chateau-texte h3 {
+    font-size: 1.8em; /* plus gros */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.chateau-texte p {
+    font-size: 1.15em;
+    line-height: 1.7em;
+    text-align: justify;
+}
+
+/* ===== à-propos ===== */
+/* ===== à-propos ===== */
+.à-propos {
+    max-width: 900px; /* limite la largeur totale */
+    margin: 50px auto; /* centré avec marge en haut et en bas */
+    padding: 0 50px; /* marge sur les côtés */
+    font-size: 1.2em;
+    line-height: 1.7em;
+    text-align: justify; /* texte justifié */
+    background-color: #f9f9f9; /* optionnel : léger fond pour démarquer la section */
+    border-radius: 10px; /* coins arrondis */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* petite ombre */
+}
+/* ===== À PROPOS CENTRÉ ===== */
+.à-propos {
+    max-width: 900px;        /* limite la largeur du texte */
+    margin: 50px auto;       /* centré horizontalement avec marge en haut et en bas */
+    padding: 20px;           /* marge intérieure */
+    font-size: 1.2em;
+    line-height: 1.7em;
+    text-align: center;      /* centre le texte */
+    background-color: #f9f9f9; /* fond clair pour mettre en valeur */
+    border-radius: 10px;     /* coins arrondis */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* légère ombre */
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-contact label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-contact input,
+.form-contact textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.form-contact button {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-contact button:hover {
+    background-color: #0056b3;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+    font-size: 1em;
+    margin-top: 50px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 900px) {
+    .chateau {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chateau img {
+        margin-right: 0;
+        width: 90%;
+    }
+
+    .texte-bienvenue h1 {
+        font-size: 2.2em;
+    }
+
+    .introduction, .a-propos, .contact {
+        padding: 0 15px;
+    }
+}
+/* ===== OFFSET POUR ANCRAGE SOUS HEADER STICKY ===== */
+#accueil,
+#à-propos,
+#contact {
+  scroll-margin-top: 120px; /* ajuste selon la hauteur de ton header */
+}
+/* ===== COMMENTAIRES ===== */
+.commentaires {
+    max-width: 900px; /* limite la largeur totale des commentaires */
+    margin: 0 auto 50px auto; /* centré avec marge en haut et en bas */
+    padding: 0 20px; /* marge sur les côtés */
+}
+
+.commentaire {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #f9f9f9; /* léger fond pour différencier chaque commentaire */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* petite ombre */
+}
+
+.commentaires-pp {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.commentaire-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.commentaire-nom {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.commentaire-message {
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: justify;
+}
+/* ===== TEXTE SUR L'IMAGE DE BIENVENUE ===== */
+.texte-bienvenue {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+}
+
+.texte-bienvenue h1 {
+    font-family: 'Georgia', 'Times New Roman', serif; /* écriture élégante */
+    font-size: 3em; /* taille du texte */
+    font-weight: bold;
+    color: #fff; /* texte blanc */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* ombre pour le faire ressortir */
+    background-color: rgba(0, 0, 0, 0.3); /* fond semi-transparent pour meilleure lisibilité */
+    display: inline-block;
+    padding: 15px 25px; /* espace autour du texte */
+    border-radius: 10px; /* coins arrondis du fond */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* effet au survol */
+}
+
+.texte-bienvenue h1:hover {
+    transform: scale(1.05); /* légère augmentation au survol */
+    background-color: rgba(0, 0, 0, 0.5); /* fond légèrement plus opaque */
+}
+/* ===== RÉTRACTION HEADER ===== */
+.header {
+  transition: padding 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.header.retractee {
+  padding: 8px 0; /* réduit la hauteur de l'entête */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* réduire aussi le logo (animation douce) */
+.header .logo {
+  transition: height 0.35s ease;
+}
+.header.retractee .logo {
+  height: 48px; /* nouvelle taille du logo quand header rétracté */
+}
+
+/* Si tu veux lier visuellement la rétraction de la bannière et l'entête */
+.bienvenue {
+  transition: height 0.6s ease, opacity 0.6s ease;
+}
+.bienvenue.retractee { height: 25vh; opacity: 0.9; }
+.bienvenue.retractee .texte-bienvenue { opacity: 0; transform: translateY(-20px); transition: 0.45s; }
+
+/* ===== LIENS DES CHÂTEAUX ===== */
+.chateau-texte h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.chateau-texte h3 a:hover {
+  color: #b8860b; /* doré au survol */
+  text-decoration: underline;
+}
+/* ===== TITRES DES CHÂTEAUX LIENS ===== */
+.chateau-texte h3 a {
+    text-decoration: none; /* pas de soulignement */
+    color: #333; /* couleur du texte */
+    transition: color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.chateau-texte h3 a:hover {
+    color: #007BFF; /* bleu au survol */
+}
+
+/* Centrer le titre par rapport au texte */
+.chateau-texte h3 {
+    text-align: center; /* centre le titre */
+    width: 100%; /* prend toute la largeur de la zone texte */
+    margin-bottom: 15px;
+}
+/* ===== ALIGNEMENT DU TEXTE ET DU TITRE ===== */
+.chateau-texte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ✅ centre verticalement le contenu du texte */
+}
+
+.chateau-texte h3 {
+    text-align: center; /* ✅ centre le titre horizontalement */
+    margin-bottom: 15px;
+}
+
+.chateau-texte p {
+    text-align: justify;
+}
+/* ===== MESSAGE DE CONFIRMATION ===== */
+#confirmation {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 15px;
+  display: none; /* caché par défaut */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation d’apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* === QUIZZ === */
+.quizz {
+  text-align: center;
+  padding: 50px;
+}
+
+.question {
+  margin: 20px auto;
+  text-align: left;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-envoyer {
+  background-color: #c9a142;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.btn-envoyer:hover {
+  background-color: #b38b2f;
+}
+
+.resultat {
+  margin-top: 40px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #444;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espace entre le logo et le lien */
+}
+
+.lien-quizz {
+  color: white; /* texte en blanc */
+  font-size: 1.2em;
+  font-weight: 500;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.lien-quizz:hover {
+  color: #c9a142; /* couleur dorée au survol */
+}
+
+

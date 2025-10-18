@@ -1,0 +1,296 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorer le patrimoine</title>
+    <link rel="stylesheet" href="Styles.css">
+
+</head>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.header');
+  const bienvenue = document.querySelector('.bienvenue');
+  if (!header || !bienvenue) return;
+
+  window.addEventListener('scroll', function() {
+    // seuil : 100px (modifie si tu veux)
+    if (window.scrollY > 100) {
+      header.classList.add('retractee');
+      bienvenue.classList.add('retractee');
+    } else {
+      header.classList.remove('retractee');
+      bienvenue.classList.remove('retractee');
+    }
+  });
+});
+</script>
+
+<body>
+    <header class="header">
+    <div class="header-container">
+        <!-- LOGO À GAUCHE -->
+        <div class="logo-container">
+            <a href="#"><img src="chateau_doré-removebg-preview.png" alt="Logo du site" class="logo"></a>
+            <!-- 🔽 Ajout du lien juste après le logo -->
+      <a href="quizz.html" class="lien-quizz" id="lienQuizz">Faire le quizz</a>    
+        </div>
+
+        <!-- TITRE AU CENTRE -->
+        <div class="header-title">Explorer le patrimoine</div>
+        
+
+        <!-- LIENS À DROITE -->
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#à-propos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    
+    </div>
+</header>
+
+    <div class="page-main">
+        <!-- IMAGE DE BIENVENUE -->
+<section class="bienvenue" id="accueil">
+    <img src="bienvenue.jpg" alt="Image de bienvenue" class="image-bienvenue">
+    <div class="texte-bienvenue">
+        <h1>Découvrez les 15 plus beaux châteaux de France</h1>
+        <p>La France a la chance d’être un pays particulièrement riche en édifice historique et notamment en château ! 
+                En effet, ce dernier compte plus de 40 000 châteaux sur son territoire, un superbe terrain de jeux pour les
+                amateurs d’art et d’histoire, mais aussi pour les curieux qui aiment observer ces magnifiques forteresses. 
+                Aujourd’hui, nous vous invitons à découvrir les 15 plus beaux chateaux francais.</p>
+    </div>
+</section>
+
+    </div>
+    <div class="separator"></div>
+
+<section class="chateaux">
+    <h2></h2>
+
+    <!-- 1. Peyrepertuse -->
+    <div class="chateau">
+        <img src="Château de Peyrepertuse.jpg" alt="Château de Peyrepertuse">
+        <div class="chateau-texte">
+            <h3><a href="http://www.peyrepertuse.com/" target="_blank"> 1. Château de Peyrepertuse (Aude, Occitanie)</a></h3>
+            <p>Le château de Peyrepertuse se situe au sud du département, proches des Pyrénées-Orientales, au cœur du parc Corbières-Fenouillèdes, au nord-ouest de Perpignan. Sa position stratégique lui permet de surveiller les cols et vallées environnantes et de communiquer par signaux avec le château de Quéribus. Entre le XIe et le XIIe siècle sont bâtis le château et sa chapelle ; il se transforme en forteresse royale au XIIIe siècle avec l’apparition d’une enceinte fortifiée. En 1659, la frontière franco-espagnole est modifiée, l’édifice perd son intérêt stratégique. Les ruines de Peyrepertuse s’inscrivent en 1908 aux Monuments Historiques.</p>
+        </div>
+    </div>
+
+    <!-- 2. Chambord -->
+    <div class="chateau">
+        <img src="Château de Chambord.png" alt="Château de Chambord">
+        <div class="chateau-texte">
+            <h3><a href="https://www.chambord.org/" target="_blank">2. Château de Chambord (Loir-et-Cher, Centre-Val de Loire)</a></h3>
+            <p>Situé au cœur du Val de Loire, à une quinzaine de kilomètres de Blois, le château de Chambord fut édifié à partir de 1519 
+                sur l’ordre de François Ier. Conçu comme pavillon de chasse, il illustre l’architecture de la Renaissance, mêlant tradition 
+                médiévale et innovations italiennes. Son escalier à double révolution, attribué à Léonard de Vinci, témoigne du génie artistique
+                 de l’époque. Peu habité par le roi, le château demeura un symbole de prestige royal. Depuis 1981, il est classé au patrimoine mondial de l’UNESCO.</p>
+        </div>
+    </div>
+
+    <!-- 3. Chantilly -->
+    <div class="chateau">
+        <img src="château de Chantilly.jpeg"Château de Chantilly">
+        <div class="chateau-texte">
+            <h3><a href="https://chateaudechantilly.fr/" target="_blank">3. Château de Chantilly (Oise, Hauts-de-France)</a></h3>
+            <p>Le château de Chantilly se situe au nord de Paris, au cœur d’un vaste domaine forestier. Reconstruit au XIXe siècle par le duc d’Aumale sur les vestiges d’une forteresse médiévale, il associe élégance classique et architecture romantique. Il abrite aujourd’hui le Musée Condé, qui conserve l’une des plus belles collections d’art ancien de France. Entouré de jardins dessinés par André Le Nôtre, le domaine reflète l’art de vivre aristocratique des siècles passés. Classé monument historique, il attire chaque année de nombreux visiteurs.</p>
+        </div>
+    </div>
+
+    <!-- 4. Pierrefonds -->
+    <div class="chateau">
+        <img src="château de Pierrefonds.jpg" alt="Château de Pierrefonds">
+        <div class="chateau-texte">
+            <h3><a href="https://www.chateau-pierrefonds.fr/" target="_blank">4. Château de Pierrefonds (Oise, Hauts-de-France)</a></h3>
+            <p>Situé en lisière de la forêt de Compiègne, le château de Pierrefonds fut bâti au XIVe siècle par Louis d’Orléans. Détruit au XVIIe siècle sur ordre de Richelieu, il resta en ruines jusqu’à sa reconstruction au XIXe siècle par Viollet-le-Duc à la demande de Napoléon III. Ce dernier en fit un modèle d’architecture néo-médiévale, combinant éléments historiques et imagination romantique. Transformé en musée, il témoigne aujourd’hui du goût du XIXe siècle pour le Moyen Âge et la restauration patrimoniale.</p>
+        </div>
+    </div>
+
+    <!-- 5. Versailles -->
+    <div class="chateau">
+        <img src="chateau de versaille.jpg" alt="Château de Versailles">
+        <div class="chateau-texte">
+            <h3><a href="https://www.chateauversailles.fr/" target="_blank">5. Château de Versailles (Yvelines, Île-de-France)</a></h3>
+            <p>Situé à une vingtaine de kilomètres de Paris, le château de Versailles fut d’abord un pavillon de chasse construit pour Louis XIII avant d’être transformé, à partir de 1661, en résidence royale par Louis XIV. Devenu le centre du pouvoir politique et artistique du royaume, il incarne la grandeur de la monarchie absolue. Son architecture classique, ses jardins à la française et sa célèbre Galerie des Glaces symbolisent le faste du règne du Roi-Soleil. Classé au patrimoine mondial depuis 1979, il demeure un lieu emblématique de l’histoire de France.</p>
+        </div>
+    </div>
+
+    <!-- 6. Chenonceau -->
+    <div class="chateau">
+        <img src="Chateau de Chenonceau.jpg" alt="Château de Chenonceau">
+        <div class="chateau-texte">
+            <h3><a href="https://www.chenonceau.com/" target="_blank">6. Château de Chenonceau (Indre-et-Loire, Centre-Val de Loire)</a></h3>
+            <p>Édifié au XVIe siècle sur les eaux du Cher, le château de Chenonceau se situe à proximité d’Amboise. Surnommé le “château des Dames”, il fut tour à tour façonné par Diane de Poitiers et Catherine de Médicis. Son élégante galerie qui enjambe la rivière illustre parfaitement le raffinement de la Renaissance française. Transformé en hôpital militaire pendant la Première Guerre mondiale, il appartient aujourd’hui à un domaine privé ouvert au public. Ses jardins et son cadre enchanteur en font l’un des châteaux les plus visités du Val de Loire.</p>
+        </div>
+    </div>
+
+    <!-- 7. Carcassonne -->
+    <div class="chateau">
+        <img src="cité de Carcasonne.jpg"Cité et Château de Carcassonne">
+        <div class="chateau-texte">
+            <h3><a href="https://www.remparts-carcassonne.fr/" target="_blank">7. Cité et Château de Carcassonne (Aude, Occitanie)</a></h3>       
+            <p>La cité de Carcassonne se dresse sur une colline dominant la vallée de l’Aude, au sud de la France. Occupée depuis l’Antiquité, elle devint au Moyen Âge une puissante forteresse défendant la frontière entre la France et l’Aragon. Après son déclin à la Renaissance, la cité fut restaurée au XIXe siècle par Viollet-le-Duc, qui lui rendit son apparence médiévale. Entourée de doubles remparts et de 52 tours, elle offre un exemple unique d’architecture militaire médiévale. Inscrite au patrimoine mondial de l’UNESCO en 1997, elle est l’un des sites les plus emblématiques du pays.</p>
+        </div>
+    </div>
+
+    <!-- 8. Azay-le-Rideau -->
+    <div class="chateau">
+        <img src="château d'Azay-le-rideau.png" alt="Château d’Azay-le-Rideau">
+        <div class="chateau-texte">
+            <h3><a href="https://www.chateau-azay-le-rideau.fr/" target="_blank">8. Château d’Azay-le-Rideau (Indre-et-Loire, Centre-Val de Loire)</a></h3>
+            <p>Le château d’Azay-le-Rideau se situe sur une île de l’Indre, au cœur de la Touraine. Construit entre 1518 et 1527 sous le règne de François Ier, il reflète l’influence italienne sur l’art de la Renaissance française. Ses façades finement sculptées et ses tours élégantes se mirent dans les eaux calmes de la rivière, créant un effet de symétrie harmonieux. Transformé en demeure de plaisance, il illustre l’équilibre entre puissance et raffinement. Propriété de l’État, il est classé monument historique depuis 1914.</p>
+        </div>
+    </div>
+
+    <!-- 9. Haut-Koenigsbourg -->
+    <div class="chateau">
+        <img src="château du Haut-Koenigsbourg.jpg"Château du Haut-Koenigsbourg">
+        <div class="chateau-texte">
+            <h3><a href="https://www.haut-koenigsbourg.fr/" target="_blank">9. Château du Haut-Koenigsbourg (Bas-Rhin, Alsace)</a></h3>
+            <p>Perché à 757 mètres d’altitude sur un éperon rocheux dominant la plaine d’Alsace, le château du Haut-Koenigsbourg fut fondé au XIIe siècle par les Hohenstaufen. Détruit pendant la guerre de Trente Ans, il resta à l’abandon jusqu’à sa restauration entre 1900 et 1908 sous l’empereur allemand Guillaume II. Fidèlement reconstruit selon les techniques médiévales, il offre un panorama exceptionnel sur les Vosges et la Forêt-Noire. Propriété de l’État français depuis 1919, il est aujourd’hui l’un des monuments les plus visités d’Alsace.</p>
+        </div>
+    </div>
+
+    <!-- 10. Trévarez -->
+    <div class="chateau">
+        <img src="château de Trévarez.jpg" alt="Château de Trévarez">
+        <div class="chateau-texte">
+            <h3><a href="https://www.cdp29.fr/fr/accueil-chateau-trevarez" target="_blank">10. Château de Trévarez (Finistère, Bretagne)</a></h3>
+            <p>Situé sur les hauteurs de Saint-Goazec, le château de Trévarez fut bâti entre 1893 et 1907 pour James de Kerjégu, président du conseil général du Finistère. Alliant architecture néo-gothique et innovations techniques — électricité, chauffage central, ascenseurs — il incarne la modernité aristocratique de la Belle Époque. Endommagé pendant la Seconde Guerre mondiale, il fut restauré à partir des années 1960. Son vaste parc, labellisé “Jardin remarquable”, accueille aujourd’hui des expositions et des événements culturels.</p>
+        </div>
+    </div>
+
+    <!-- 11. Amboise -->
+    <div class="chateau">
+        <img src="Château d'amboise.jpg.webp" alt="Château d’Amboise">
+        <div class="chateau-texte">
+            <h3><a href="https://www.chateau-amboise.com/" target="_blank">11. Château d’Amboise (Indre-et-Loire, Centre-Val de Loire)</a></h3>          
+            <p>Surplombant la Loire, le château d’Amboise se situe au cœur de la Touraine historique. Résidence royale sous Charles VIII et François Ier, il joua un rôle majeur dans l’introduction de la Renaissance en France. C’est ici que Léonard de Vinci passa ses dernières années, inhumé dans la chapelle Saint-Hubert du château. De forteresse médiévale, Amboise devint un lieu d’art et de science, symbole du rayonnement culturel de la cour de France. Classé monument historique dès 1840, il attire aujourd’hui de nombreux visiteurs.</p>
+        </div>
+    </div>
+
+    <!-- 12. Écouen -->
+    <div class="chateau">
+        <img src="château d'Écouen.jpg" alt="Château d’Écouen">
+        <div class="chateau-texte">
+            <h3><a href="https://musee-renaissance.fr/" target="_blank">12. Château d’Écouen (Val-d’Oise, Île-de-France)</a></h3>
+            <p>Situé au nord de Paris, le château d’Écouen fut construit entre 1538 et 1555 pour Anne de Montmorency, connétable de France. Ce joyau de la Renaissance illustre l’essor d’une architecture de prestige inspirée des modèles italiens. Orné de sculptures et vitraux d’époque, il abrite aujourd’hui le Musée national de la Renaissance. Restauré au XXe siècle, il offre une immersion unique dans l’art, la vie et la pensée du XVIe siècle.</p>
+        </div>
+    </div>
+
+    <!-- 13. Ussé -->
+    <div class="chateau">
+        <img src="château d’Ussé.png" alt="Château d’Ussé">
+        <div class="chateau-texte">
+            <h3><a href="https://www.chateaudusse.fr/" target="_blank">13. Château d’Ussé (Indre-et-Loire, Centre-Val de Loire)</a></h3>
+            <p>Dominant la vallée de l’Indre, le château d’Ussé fut édifié entre le XVe et le XVIIe siècle. D’abord forteresse médiévale, il fut transformé en élégante demeure Renaissance, puis en château de plaisance. Ses tours élancées et son allure féérique auraient inspiré Charles Perrault pour La Belle au bois dormant. Toujours habité, le château présente un décor intérieur raffiné et des mises en scène évoquant les contes et la vie de cour. Classé monument historique dès 1931, il est ouvert au public.</p>
+        </div>
+    </div>
+
+    <!-- 14. Cheverny -->
+    <div class="chateau">
+        <img src="Château de Cheverny.png" alt="Château de Cheverny">
+        <div class="chateau-texte">
+            <h3><a href="https://www.chateau-cheverny.fr/" target="_blank">14. Château de Cheverny (Loir-et-Cher, Centre-Val de Loire)</a></h3>
+            <p>Situé entre Blois et Chambord, le château de Cheverny fut construit entre 1604 et 1634 pour la famille Hurault. Exemple parfait de symétrie classique, il se distingue par la richesse de son mobilier et la continuité de son occupation familiale depuis plus de six siècles. Hergé s’en inspira pour créer le château de Moulinsart dans Tintin. Toujours habité, Cheverny est l’un des châteaux les mieux conservés du Val de Loire et un témoignage rare de l’art de vivre sous Louis XIII.</p>
+        </div>
+    </div>
+
+    <!-- 15. Fontainebleau -->
+    <div class="chateau">
+        <img src="Château de Fontainebleau.jpg" alt="Château de Fontainebleau">
+        <div class="chateau-texte">
+            <h3><a href="https://www.chateaudefontainebleau.fr/" target="_blank">15. Château de Fontainebleau (Seine-et-Marne, Île-de-France)</a></h3>            
+            <p>Le château de Fontainebleau se situe à 60 kilomètres au sud-est de Paris, au cœur d’une vaste forêt. Résidence royale du XIIe au XIXe siècle, il fut transformé par François Ier, qui y introduisit la Renaissance italienne en France. Agrandi par Henri IV, puis résidence impériale de Napoléon Ier, il reflète huit siècles d’histoire monarchique. Ses galeries décorées, ses appartements et ses jardins en font un musée vivant des arts et du pouvoir. Inscrit au patrimoine mondial depuis 1981, il demeure un joyau historique incontournable.</p>
+        </div>
+    </div>
+
+</section>
+
+    <div class="à-propos" id="à-propos">
+        <h2 class="title-category">À propos</h2>
+        <div class="picture-propos">
+              <div class="infos-picture-propos">
+                  <div class="picture-propos-text">
+                    <h3>la fondatrice</h3>
+                    <p>Ce site qui explore les trésors du patrimoine francais a été fondé par moi-même, Louna RUDEAU élève L3 LSPO de Poitiers. 
+                        Je vais m'attacher ici à vous faire découvrir le patrimoine architectural qui fait rayonner la France à l'étranger ainsi
+                         que les joyaux cachés dont la france regorge. </p>
+                  </div>
+              </div>
+        </div>
+
+    <section class="contact" id="contact">
+  <h2>Contact</h2>
+  <form class="form-contact" id="contact-form">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="jean.dupont@gmail.com" required>
+      <label for="message">Votre message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Je vous contacte pour..."></textarea>
+
+      <button type="submit" class="btn-envoyer">Envoyer</button>
+  </form>
+
+  <!-- ✅ Message de confirmation -->
+  <p id="confirmation" class="confirmation-message">✅ Message envoyé avec succès !</p>
+</section>
+        <div class="separator"></div>
+        <div class="commentaires" id="commentaires">
+            <h2 class="title-category">Commentaires</h2>
+            <div class="commentaire">
+                <img src="image.pseudo.webp" class="commentaires-pp">
+                <div class="commentaire-text">
+                    <h3 class="commentaire-nom">Jean Dupont</h3>
+                    <p class="commentaire-message">Ce week-end, j'ai visité trois des châteaux proposés dans ce classment, je ne regrette absolument pas mon choix.
+                        j'ai découvert via ce site web le château d'Azay-le-Rideau et quel lieux à coupé le souffle !</p>
+                </div>
+            </div>
+            <div class="commentaires" id="commentaires">
+            <h2 class="title-category"></h2>
+            <div class="commentaire">
+                <img src="image.pseudo.webp" class="commentaires-pp">
+                <div class="commentaire-text">
+                    <h3 class="commentaire-nom">Antoine Castle</h3>
+                    <p class="commentaire-message"> Hi, i was on a trip in france to discover the architecture and i accidently found this website.
+                        I loved to discover the castel and the city of Carcasonne, it was really one of the most beautifull city i have ever seen</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h2>Mon site 2025</h2>
+    </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("contact-form");
+  const confirmation = document.getElementById("confirmation");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    confirmation.style.display = "block"; // affiche le message
+    form.reset();
+
+    setTimeout(() => {
+      confirmation.style.display = "none"; // le cache après 4s
+    }, 4000);
+  });
+});
+</script>
+<script>
+  // On force l'affichage du lien quizz, peu importe localStorage ou autre
+  const lienQuizz = document.getElementById("lienQuizz");
+  if (lienQuizz) {
+    lienQuizz.style.display = "inline-block";
+  }
+</script>
+
+</body>
+</html>
+
